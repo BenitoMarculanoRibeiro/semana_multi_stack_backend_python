@@ -18,6 +18,7 @@ class AdocaoSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
 
     def validate_valor(self, value):
+        
         if value < 10:
             raise serializers.ValidationError('Deve ser maior que 10')
         if value > 100:
